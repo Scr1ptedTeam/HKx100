@@ -1,6 +1,6 @@
 const APP_TOKEN = "d28721be-fd2d-4b45-869e-9f253b554e50"
   , PROMO_ID = "43e35910-c168-4634-ad4f-52fd764a843f"
-  , EVENTS_DELAY = 2e4;
+  , EVENTS_DELAY = 667;
 function generateClientId() {
     return `${Date.now()}-${Array.from({
         length: 19
@@ -95,7 +95,7 @@ document.getElementById("startBtn").addEventListener("click", (async()=>{
             void (startBtn.disabled = !1)
         }
         for (let i = 0; i < 7; i++) {
-            await sleep(2e4 * delayRandom());
+            await sleep(667 * delayRandom());
             const hasCode = await emulateProgress(clientToken);
             if (updateProgress(10 / keyCount),
             hasCode)
